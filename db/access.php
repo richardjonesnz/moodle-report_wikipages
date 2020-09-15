@@ -17,7 +17,7 @@
 /**
  * Simple report capabilities
  *
- * @package   report_simplereport
+ * @package   report_wikipages
  * @copyright  2020 Richard Jones {@link https://richardnz.net}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
 
-    'report/simplereport:view' => array(
+    'report/wikipages:view' => array(
         'riskbitmask' => RISK_PERSONAL,
         'captype' => 'read',
         'contextlevel' => CONTEXT_COURSE,

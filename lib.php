@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Callbacks for report_simplereport
+ * Callbacks for report_wikipages
  *
- * @package   report_simplereport
+ * @package   report_wikipages
  * @copyright  2020 Richard Jones {@link https://richardnz.net}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,9 +26,9 @@
  * Developed for MoodleBites for Developers Level 1
  * by Richard Jones.
  */
-function report_simplereport_extend_navigation_course($navigation, $course, $context) {
-    if (has_capability('report/simplereport:view', $context)) {
-        $url = new moodle_url('/report/simplereport/index.php', array('id'=>$course->id));
-        $navigation->add(get_string('pluginname', 'report_simplereport'), $url, navigation_node::TYPE_SETTING, null, null, new pix_icon('i/report', ''));
+function report_wikipages_extend_navigation_course($navigation, $course, $context) {
+    if (has_capability('report/wikipages:view', $context)) {
+        $url = new moodle_url('/report/wikipages/index.php', array('id'=>$course->id));
+        $navigation->add(get_string('pluginname', 'report_wikipages'), $url, navigation_node::TYPE_SETTING, null, null, new pix_icon('i/report', ''));
     }
 }

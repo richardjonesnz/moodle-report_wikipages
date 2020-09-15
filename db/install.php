@@ -17,14 +17,14 @@
 /**
  * Simple report capabilities
  *
- * @package   report_simplereport
+ * @package   report_wikipages
  * @copyright  2020 Richard Jones {@link https://richardnz.net}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-function xmldb_report_simplereport_install() {
+function xmldb_report_wikipages_install() {
     global $DB;
 
 }

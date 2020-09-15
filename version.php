@@ -17,7 +17,7 @@
 /**
  * Simple report
  *
- * @package   report_simplereport
+ * @package   report_wikipages
  * @copyright  2020 Richard Jones {@link https://richardnz.net}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -27,4 +27,4 @@ defined('MOODLE_INTERNAL') || die;
 
 $plugin->version   = 2020030901;
 $plugin->requires  = 2017111300; // Minimum Moodle 3.4.
-$plugin->component = 'report_simplereport';
+$plugin->component = 'report_wikipages';

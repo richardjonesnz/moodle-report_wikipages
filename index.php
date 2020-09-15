@@ -17,16 +17,17 @@
 /**
  * A simple report plugin example
  *
- * @package   report_simplereport
+ * @package   report_wikipages
  * @copyright  2020 Richard Jones {@link https://richardnz.net}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * Developed for MoodleBites for Developers Level 1
+ * Modified from MoodleBites for Developers Level 1
  * by Richard Jones.
  */
 
+use report_wikipages\local\page_data;
 require('../../config.php');
 global $DB;
 $id = required_param('id', PARAM_INT);
@@ -37,7 +38,7 @@ if (!$course) {
 }
 
 $context = context_course::instance($course->id);
-$url = new moodle_url('/report/simplereport/index.php', ['course' => $id]);
+$url = new moodle_url('/report/wikipages/index.php', ['course' => $id]);
 
 $PAGE->set_url($url);
 $PAGE->set_pagelayout('admin');
@@ -45,11 +46,13 @@ $PAGE->set_pagelayout('admin');
 require_login($course);
 
 // Check basic permission.
-require_capability('report/simplereport:view',$context);
+require_capability('report/wikipages:view',$context);
+
+// Check for wikis.
+$wikis = $DB->get_records('wiki', ['course' => $id], null, 'id');
 
 echo $OUTPUT->header();
-echo $OUTPUT->heading(get_string('pluginname','report_simplereport'));
-$eventrecords = $DB->get_records('event', ['courseid' => $id], null,
-        'name, description, timestart');
-var_dump($eventrecords);
+foreach ($wikis as $wiki) {
+    echo $OUTPUT->render(new page_data($wiki->id, $id, $context));
+}
 echo $OUTPUT->footer();
