@@ -1,1 +1,1 @@
-A simple report for the week 8 challenges.
+Testing solution for wiki page export to printable format.
